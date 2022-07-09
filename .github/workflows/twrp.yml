@@ -62,5 +62,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: twrp.zip
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/twrp.zip
+            path: /home/runner/work/Recovery_builder/Recovery_builder/work/twrp.zip
             retention-days: 5
