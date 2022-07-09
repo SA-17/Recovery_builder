@@ -14,10 +14,10 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/SHRP/manifest.git -b v3_9.0
-  DEVICE: msm8953_64
-  DT_LINK: https://github.com/AndVer0/android_device_vivo_msm8953_64
-  DT_PATH: device/vivo/msm8953_64
+  MANIFEST: https://github.com/SHRP/manifest.git -b v3_10.0
+  DEVICE: m10lte
+  DT_LINK: https://github.com/S0FT9/android_device_samsung_m10lte
+  DT_PATH: device/samsung/m10lte
   TYPE: recoveryimage
   OT: omni_
   TZ: Europe/London
@@ -63,5 +63,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.zip
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/shrp.zip
+            path: /home/runner/work/Recovery_builder/Recovery_builder/work/shrp.zip
             retention-days: 5
