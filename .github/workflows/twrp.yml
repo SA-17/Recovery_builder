@@ -1,4 +1,4 @@
-name: Building Twrp recovery Android 4-10
+name: Building Twrp recovery
 
 on:
 #  release:
@@ -57,7 +57,7 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j100
-              sudo apt install zip && zip twrp.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/$BUILD.img
+              sudo apt install zip && zip twrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img
        - name: Save
          uses: actions/upload-artifact@v3
          with:
