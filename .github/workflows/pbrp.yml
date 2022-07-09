@@ -58,11 +58,11 @@ jobs:
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j110
               sudo apt install zip
-              zip pbrp.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/*.zip
+              zip pbrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/*.zip
 
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: recovery.zip
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/pbrp.zip
+            path: /home/runner/work/Recovery-builder/Recovery-builder/work/pbrp.zip
             retention-days: 5
