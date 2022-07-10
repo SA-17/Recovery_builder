@@ -15,9 +15,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
-  DEVICE: a03
-  DT_LINK: https://github.com/NeonzDump/twrp_samsung_a03
-  DT_PATH: device/samsung/a03
+  DEVICE: ossi
+  DT_LINK: https://github.com/dragoshr1234/android_device_oppo-ossi
+  DT_PATH: device/oppo/ossi
   TARGET: recoveryimage
   BUILD: recovery
   OT: twrp_
