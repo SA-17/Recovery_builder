@@ -15,9 +15,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
-  DEVICE: m10lte
-  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte
-  DT_PATH: device/samsung/m10lte
+  DEVICE: Armor_X5_Q
+  DT_LINK: https://github.com/SPRATAY/android_device_ulefone_x5_armor
+  DT_PATH: device/ulefone/Armor_X5_Q
   TARGET: recoveryimage
   BUILD: recovery
   OT: omni_
