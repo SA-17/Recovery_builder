@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0-deprecated
   DEVICE: Armor_X5_Q
   DT_LINK: https://github.com/SPRATAY/android_device_ulefone_x5_armor
   DT_PATH: device/ulefone/Armor_X5_Q
