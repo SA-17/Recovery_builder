@@ -57,10 +57,10 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j150
-              sudo apt install zip && zip twrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img
+              mv /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img /home/runner/work/Recovery_builder/Recovery_builder/work
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: twrp.zip
-            path: /home/runner/work/Recovery_builder/Recovery_builder/work/twrp.zip
+            path: /home/runner/work/Recovery_builder/Recovery_builder/work/recovery.img
             retention-days: 5
