@@ -57,10 +57,16 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j150
-              mv /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img /home/runner/work/Recovery_builder/Recovery_builder/work
-       - name: Save
-         uses: actions/upload-artifact@v3
-         with:
-            name: twrp.zip
-            path: /home/runner/work/Recovery_builder/Recovery_builder/work/recovery.img
-            retention-days: 5
+              mv /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.tar /home/runner/work/Recovery_builder/Recovery_builder/work
+       - name: Upload to Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: /home/runner/work/Recovery_builder/Recovery_builder/work/$BUILD.tar
+        name: $BUILD-$DEVICE
+        tag_name: ${{ github.run_id }}
+        body: |
+          Manifest: $MANIFEST
+          Device: $DT_LINK
+          Target: $BUILD.img
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
