@@ -58,15 +58,12 @@ jobs:
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j150
               mv /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.tar /home/runner/work/Recovery_builder/Recovery_builder/work
+
        - name: Upload to Release
-         uses: softprops/action-gh-release@v1
-          with:
-            files: /home/runner/work/Recovery_builder/Recovery_builder/work/$BUILD.tar
-            name: $BUILD-$DEVICE
-            tag_name: ${{ github.run_id }}
-            body: |
-                 Manifest: $MANIFEST
-                 Device: $DT_LINK
-                 Target: $BUILD.img
+         uses: xresloader/upload-to-github-release@v1
          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         with:
+           file: "/home/runner/work/Recovery_builder/Recovery_builder/work/$BUILD*"
+           tags: true
+           draft: true
