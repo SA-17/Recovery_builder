@@ -16,7 +16,7 @@ on:
 env:
   MANIFEST: https://github.com/SHRP/manifest.git -b v3_10.0
   DEVICE: m10lte
-  DT_LINK: https://github.com/S0FT9/android_device_samsung_m10lte -b shrp
+  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b shrp
   DT_PATH: device/samsung/m10lte
   TYPE: recoveryimage
   OT: omni_
