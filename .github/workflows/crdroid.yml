@@ -37,13 +37,12 @@ jobs:
             git config --global user.name "Ayush"
             git config --global user.email "ayush@disroot.org"         
             sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* 
-            sudo -E apt-get clean
-            
+            sudo -E apt-get clean            
             sudo -E apt-get -qq update
             sudo apt install zip bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-gtk3-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev 
             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
             sudo chmod a+rx /usr/local/bin/repo
-            rm -rf /opt /usr/share
+            sudo rm -rf /opt /usr/share
             
        - name: Sync recovery source and device tree
          run: |
