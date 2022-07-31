@@ -15,8 +15,8 @@ on:
 
 env:
   MANIFEST: https://github.com/SHRP/manifest.git -b v3_10.0
-  DEVICE: infinix note 8i
-  DT_LINK: https://github.com/mastersenpai0405/recovery_device_infinix_X683 -b shrp
+  DEVICE: x683
+  DT_LINK: https://github.com/mastersenpai0405/recovery_device_infinix_X683
   DT_PATH: device/infinix/x683
 
   TYPE: recoveryimage
