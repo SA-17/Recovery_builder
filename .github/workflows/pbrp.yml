@@ -15,9 +15,9 @@ on:
 
 env:
   MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-10.0
-  DEVICE: m10lte
-  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_pbrp
-  DT_PATH: device/samsung/m10lte
+  DEVICE: infinix note 8i
+  DT_LINK: https://github.com/mastersenpai0405/recovery_device_infinix_X683
+  DT_PATH: device/infinix/x683
   TARGET: recoveryimage
   OT: omni_
   TZ: Europe/London
