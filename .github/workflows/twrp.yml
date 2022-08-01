@@ -47,7 +47,7 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j150
-              mv /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.zip /home/runner/work/Recovery_builder/Recovery_builder/work
+              mv /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img /home/runner/work/Recovery_builder/Recovery_builder/work
 
        - name: Upload to Release
          uses: xresloader/upload-to-github-release@v1
