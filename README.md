@@ -1,6 +1,6 @@
 # Recovery_builder
 
-hi there , this script is made by me with. its based on another repo called ubuntu tmate on github action enjoy
+hi there , this script is made by me. its based on another repo called ubuntu tmate on github action enjoy
 
 ok first before blaming my script if you got a bootloop or the build is unsuccessfully the problem is from you that bcz:
    
