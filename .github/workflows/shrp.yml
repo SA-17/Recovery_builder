@@ -56,7 +56,7 @@ jobs:
        - name: Build
          run: |
               cd work
-              bash device/samsung/m10lte/build_skyhawk.sh
+              . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TYPE -j110            
               sudo apt update && sudo apt install zip -y && zip shrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/*_stable-Unofficial_*
              
        - name: Save
