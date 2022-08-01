@@ -10,7 +10,7 @@ env:
   DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
   BUILD: recovery
-  OT: twrp_
+  OT: omni_
   TZ: Europe/London
 
 jobs:
