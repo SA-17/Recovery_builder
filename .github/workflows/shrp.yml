@@ -16,7 +16,7 @@ on:
 env:
   MANIFEST: https://github.com/SHRP/manifest.git -b v3_10.0
   DEVICE: m10lte
-  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b shrp
+  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte_all
   DT_PATH: device/samsung/m10lte
   TYPE: recoveryimage
   OT: omni_
@@ -56,7 +56,7 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TYPE -j110
+              bash build*sh
               sudo apt update && sudo apt install zip -y && zip shrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/*_stable-Unofficial_*
              
        - name: Save
