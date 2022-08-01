@@ -1,22 +1,12 @@
 name: Building Twrp recovery
 
 on:
-#  release:
-#    types: [published]
-#  push:
-#    branches:
-#      - master
-#    paths:
-#      - '.config'
-#  schedule:
-#    - cron: 0 8 * * 5
-#  tested on android 8.1
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
   DEVICE: m10lte
-  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b android_11
+  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b twrp
   DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
   BUILD: recovery
