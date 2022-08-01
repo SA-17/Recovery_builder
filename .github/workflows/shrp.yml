@@ -56,7 +56,7 @@ jobs:
        - name: Build
          run: |
               cd work
-              bash build*sh
+              bash build_skyhawk.sh
               sudo apt update && sudo apt install zip -y && zip shrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/*_stable-Unofficial_*
              
        - name: Save
