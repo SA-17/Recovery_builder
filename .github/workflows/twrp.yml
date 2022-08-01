@@ -47,13 +47,11 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j150
-              mv /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img /home/runner/work/Recovery_builder/Recovery_builder/work
+              zip twrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img
 
-       - name: Upload to Release
-         uses: xresloader/upload-to-github-release@v1
-         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       - name: Save
+         uses: actions/upload-artifact@v3
          with:
-           file: "/home/runner/work/Recovery_builder/Recovery_builder/work/$BUILD*"
-           tags: true
-           draft: true
+            name: recovery.zip
+            path: /home/runner/work/Recovery_builder/Recovery_builder/work/twrp.zip
+            retention-days: 5
