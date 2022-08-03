@@ -6,7 +6,7 @@ on:
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
   DEVICE: m10lte
-  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b stock1
+  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b stock2
   DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
   BUILD: recovery
