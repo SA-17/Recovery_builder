@@ -6,7 +6,7 @@ on:
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
   DEVICE: m10lte
-  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b final
+  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b twrp-10
   DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
   BUILD: recovery
@@ -47,7 +47,7 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j60
-              zip twrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img
+              zip twrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.tar
 
        - name: Save
          uses: actions/upload-artifact@v3
