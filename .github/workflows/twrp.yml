@@ -1,17 +1,17 @@
-name: Building Twrp recovery
+name: Building Twrp
 
 on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
+  BRANCH: twrp-9.0
   DEVICE: m10lte
   DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b twrp-10
   MANUFACTURER: samsung
-  TARGET: recoveryimage
-  BUILD: recovery
+  TARGET: recovery
+  IMAGE: image
   OT: omni_
-  TZ: Europe/London
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
        - name: Checkout
          uses: actions/checkout@master
                                
-       - name: Initializing environment
+       - name: remove pkg and setting repo
          run: |
             sudo apt update && sudo apt install git
             git clone https://github.com/Hostfl/rm_pkg pkg && cd pkg && bash setup.sh
@@ -29,22 +29,22 @@ jobs:
             sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
             sudo chmod a+rx /usr/local/bin/repo
+            mkdir work
+            cd work
+            repo init -u $MANIFEST -b $BRANCH --depth=1
             
-       - name: Sync recovery source and device tree
-         run: |
-             mkdir work
-             cd work
-             repo init -u $MANIFEST --depth=1
+       - name: Sync source
+         run: |          
              repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK --depth=1 --single-branch device/$MANUFACTURER/$DEVICE          
              
-       - name: Build
+       - name: Build twrp
          run: |
               cd work
-              . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j60
+              . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j20
               zip twrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img
 
-       - name: Save
+       - name: Save in artifact
          uses: actions/upload-artifact@v3
          with:
             name: recovery.zip
