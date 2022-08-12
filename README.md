@@ -1,6 +1,6 @@
 # Recovery_builder
 
-hi there , this script is made by me. its based on another repo called ubuntu ssh using gh actions so enjoy
+hi there , this script is made by me.Im AndVer0
 
 ok first before blaming my script if you got a bootloop or the build is unsuccessfull. check your device tree
 
