@@ -23,6 +23,9 @@ env:
   OT: omni
   # dont change that
   SYM: _
+  # output format for some reason samsung phones need a custom mkbootimg
+  # which compress your recovery into .tar (default: .img / samsung + custom mkbootimg: .tar)
+  FORMAT: .img
 
 jobs:
   build:
