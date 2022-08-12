@@ -11,7 +11,7 @@ env:
   # (required) device codename i.e: sweet mojito.. 
   DEVICE: m10lte
   # (required) device tree link with branch 
-  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte
+  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b a11
   # (required) who made your phone ? 
   MANUFACTURER: samsung
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
