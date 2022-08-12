@@ -43,12 +43,12 @@ jobs:
             sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
             sudo chmod a+rx /usr/local/bin/repo
-            mkdir work
-            cd work
-            repo init -u $MANIFEST -b $BRANCH --depth=1
             
-       - name: Sync source
-         run: |          
+       - name: Adding and Sync source
+         run: |   
+             mkdir work
+             cd work
+             repo init -u $MANIFEST -b $BRANCH --depth=1              
              repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK --depth=1 --single-branch device/$MANUFACTURER/$DEVICE          
              
