@@ -9,24 +9,12 @@ ok first before blaming my script if you got a bootloop or the build is unsucces
    *) from device tree
    *) you added edited my script
 
-you need to know what you should change:
+1) froke
 
-manifest: type manifest url correctly + most important use your a supported branch 
-for shrp pbrp (android 12 branch not released yet)
+2) go to .github/workflows/"recovery".yml
 
+3) read commentary and edit required values to your own
 
-device tree: you should add it + if it had any branch add -b <branche name> add it in last without <>
+4) enable actions if isnt enabled
 
-
-
-OT: if your device use aosp android use twrp_ if not use omni_
-codename and device path: codename isnt device name for example: poco X3 codename is vayu you should use vayu not poco x3 samething on device tree 
-it important to fill in this way device/<manufacturer>/<codename>
-
-
-i.e: device/xiaomi/vayu
-
-what about target and type: for a phone that dont have recovery.img in stock rom or dont have recovery partition you should type in these: bootimage and boot else: recoveryimage and recovery
-
-
-what about dynamic partition stuff and A/B look its important to add needed flags for it
+5) run
