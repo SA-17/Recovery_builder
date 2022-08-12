@@ -2,12 +2,7 @@
 
 hi there , this script is made by me. its based on another repo called ubuntu ssh using gh actions so enjoy
 
-ok first before blaming my script if you got a bootloop or the build is unsuccessfully the problem is from you that bcz:
-   
-
-   *) you didnt fill the right info
-   *) from device tree
-   *) you added edited my script
+ok first before blaming my script if you got a bootloop or the build is unsuccessfull. check your device tree
 
 1) froke
 
