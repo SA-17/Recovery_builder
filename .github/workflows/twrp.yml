@@ -4,14 +4,25 @@ on:
   workflow_dispatch:
 
 env:
+  # twrp manifest
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
+  # manifest branch
   BRANCH: twrp-9.0
+  # device codename i.e: sweet mojito..
   DEVICE: m10lte
+  # device tree link with branch
   DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b twrp-10
+  # who made your phone ?
   MANUFACTURER: samsung
+  # recovery partiton = recovery, else (no recovery partition): boot
   TARGET: recovery
+  # dont change that
   IMAGE: image
-  OT: omni_
+  # depend of device tree if you see twrp_"codename".mk use twrp
+  # else (omni_"codename".mk): omni
+  OT: omni
+  # dont change that
+  SYM: _
 
 jobs:
   build:
@@ -41,7 +52,7 @@ jobs:
        - name: Build twrp
          run: |
               cd work
-              . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j20
+              . build/envsetup.sh && lunch $OT$SYM$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j20
               zip twrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$BUILD.img
 
        - name: Save in artifact
