@@ -5,13 +5,13 @@ on:
 
 env:
   # (required) twrp manifest 
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
   # (required) manifest branch 
-  BRANCH: twrp-11
+  BRANCH: twrp-9.0
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: m10lte
+  DEVICE: j7xelte
   # (required) device tree link with branch 
-  DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b a11
+  DT_LINK: https://github.com/TeamWin/android_device_samsung_j7xelte
   # (required) who made your phone ? 
   MANUFACTURER: samsung
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
@@ -20,7 +20,7 @@ env:
   IMAGE: image
   # (required) depend of device tree if you see twrp_"codename".mk use twrp
   # else (omni_"codename".mk): omni
-  OT: twrp
+  OT: omni
   # dont change that
   SYM: _
   # (required) output format for some reason samsung phones need a custom mkbootimg
