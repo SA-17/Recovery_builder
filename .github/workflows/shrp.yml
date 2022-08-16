@@ -1,4 +1,4 @@
-name: Building Twrp
+name: Building Shrp
 
 on:
   workflow_dispatch:
