@@ -7,15 +7,15 @@ env:
   # (required) twrp manifest 
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
   # (required) manifest branch 
-  BRANCH: twrp-9.0
+  BRANCH: twrp-11.0
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: j7xelte
+  DEVICE: griffin
   # (required) device tree link with branch 
-  DT_LINK: https://github.com/TeamWin/android_device_samsung_j7xelte
+  DT_LINK: https://github.com/sjllls/device-sony-Griffin-twrp
   # (required) who made your phone ? 
-  MANUFACTURER: samsung
+  MANUFACTURER: sony
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
-  TARGET: recovery
+  TARGET: boot
   # dont change that
   IMAGE: image
   # (required) depend of device tree if you see twrp_"codename".mk use twrp
