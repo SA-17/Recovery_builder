@@ -13,7 +13,7 @@ env:
   # (required) device tree link with branch 
   DT_LINK: https://github.com/twrpdtgen/android_device_sony_griffin/tree/2022-8-17
   # (required) who made your phone ? 
-  MANUFACTURER: samsung
+  MANUFACTURER: sony
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
   TARGET: boot
   # dont change that
@@ -55,8 +55,8 @@ jobs:
        - name: Build twrp
          run: |
               cd work
-              . build/envsetup.sh && lunch $OT$SYM$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j60
-              zip twrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$TARGET$FORMAT
+             . build/envsetup.sh; lunch twrp_<device>-eng; mka bootimage xport ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j60
+          zip twrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/$TARGET$FORMAT
 
        - name: Save in artifact
          uses: actions/upload-artifact@v3
