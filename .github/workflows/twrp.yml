@@ -7,7 +7,7 @@ env:
   # (required) twrp manifest 
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
   # (required) manifest branch 
-  BRANCH: twrp-11.0
+  BRANCH: twrp-9.0
   # (required) device codename i.e: sweet mojito.. 
   DEVICE: griffin
   # (required) device tree link with branch 
