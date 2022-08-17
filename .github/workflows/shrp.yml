@@ -11,7 +11,7 @@ env:
   # (required) device codename i.e: sweet mojito.. 
   DEVICE: griffin
   # (required) device tree link with branch 
-  DT_LINK: https://github.com/twrpdtgen/android_device_sony_griffin/tree/2022-8-17
+  DT_LINK: https://github.com/twrpdtgen/android_device_sony_griffin.git
   # (required) who made your phone ? 
   MANUFACTURER: sony
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
