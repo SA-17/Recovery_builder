@@ -9,9 +9,9 @@ env:
   # (required) manifest branch 
   BRANCH: twrp-9.0
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: j7xelte
-  # (required) device tree link with branch 
-  DT_LINK: https://github.com/TeamWin/android_device_samsung_j7xelte
+  DEVICE: m10lte
+  # (required) device tree link with branch if exists
+  DT_LINK: https://github.com/SA-17/m10
   # (required) who made your phone ? 
   MANUFACTURER: samsung
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
@@ -25,7 +25,7 @@ env:
   SYM: _
   # (required) output format for some reason samsung phones need a custom mkbootimg
   # which compress your recovery into .tar (default: .img / samsung + custom mkbootimg: .tar) 
-  FORMAT: .img
+  FORMAT: .tar
 
 jobs:
   build:
