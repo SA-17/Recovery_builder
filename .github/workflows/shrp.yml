@@ -9,7 +9,7 @@ env:
   # (required) manifest branch 
   BRANCH: v3_11.0
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: j7xelte
+  DEVICE: griffin
   # (required) device tree link with branch 
   DT_LINK: https://github.com/eswd04/android_device_griffin-TWRP.git
   # (required) who made your phone ? 
