@@ -7,25 +7,25 @@ env:
   # (required) twrp manifest 
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
   # (required) manifest branch 
-  BRANCH: twrp-11
+  BRANCH: twrp-12.1
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: m10lte
+  DEVICE: griffin
   # (required) device tree link with branch if exists
-  DT_LINK: https://github.com/SA-17/m10
+  DT_LINK: https://github.com/eswd04/android_device_griffin-TWRP.git
   # (required) who made your phone ? 
-  MANUFACTURER: samsung
+  MANUFACTURER: sony
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
-  TARGET: recovery
+  TARGET: boot
   # dont change that
   IMAGE: image
   # (required) depend of device tree if you see twrp_"codename".mk use twrp
   # else (omni_"codename".mk): omni
-  OT: twrp
+  OT: omni
   # dont change that
   SYM: _
   # (required) output format for some reason samsung phones need a custom mkbootimg
   # which compress your recovery into .tar (default: .img / samsung + custom mkbootimg: .tar) 
-  FORMAT: .tar
+  FORMAT: .img
 
 jobs:
   build:
