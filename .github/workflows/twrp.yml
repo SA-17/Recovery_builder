@@ -7,11 +7,11 @@ env:
   # (required) twrp manifest 
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
   # (required) manifest branch 
-  BRANCH: twrp-12.1
+  BRANCH: twrp-11
   # (required) device codename i.e: sweet mojito.. 
   DEVICE: griffin
   # (required) device tree link with branch if exists
-  DT_LINK: https://github.com/eswd04/android_device_griffin-TWRP.git
+  DT_LINK: https://github.com/twrpdtgen/android_device_sony_griffin.git
   # (required) who made your phone ? 
   MANUFACTURER: sony
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
