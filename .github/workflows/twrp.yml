@@ -5,22 +5,22 @@ on:
 
 env:
   # (required) twrp manifest 
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni_aosp.git -b twrp-12.1
   # (required) manifest branch 
   BRANCH: twrp-11
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: m10lte
+  DEVICE: m23qx
   # (required) device tree link with branch if exists
-  DT_LINK: https://github.com/SA-17/m10
+  DT_LINK: https://github.com/twrpdtgen/android_device_samsung_m23xq/tree/m23xqxx-user-11-RP1A.200720.012-M236BXXU1AVG1-release-keys
   # (required) who made your phone ? 
-  MANUFACTURER: samsung
+  MANUFACTURER: device/samsung/m23qx
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
-  TARGET: recovery
+  TARGET: recoveryimagem
   # dont change that
   IMAGE: image
   # (required) depend of device tree if you see twrp_"codename".mk use twrp
   # else (omni_"codename".mk): omni
-  OT: twrp
+  OT: omni_
   # dont change that
   SYM: _
   # (required) output format for some reason samsung phones need a custom mkbootimg
