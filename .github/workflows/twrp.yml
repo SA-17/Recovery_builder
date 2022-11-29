@@ -7,13 +7,13 @@ env:
   # (required) twrp manifest 
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
   # (required) manifest branch 
-  BRANCH: twrp-11
+  BRANCH: twrp-12.1
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: m10lte
+  DEVICE: RMX3491
   # (required) device tree link with branch if exists
-  DT_LINK: https://github.com/SA-17/m10
+  DT_LINK: https://github.com/Darkweber0009/twrp_recovery_tree_realme_RMX3491
   # (required) who made your phone ? 
-  MANUFACTURER: samsung
+  MANUFACTURER: realme 
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
   TARGET: recovery
   # dont change that

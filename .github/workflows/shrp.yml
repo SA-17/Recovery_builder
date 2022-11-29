@@ -7,20 +7,20 @@ env:
   # (required) shrp manifest 
   MANIFEST: https://github.com/SHRP/manifest.git
   # (required) manifest branch 
-  BRANCH: v3_10.0
+  BRANCH: shrp-12.1
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: j7xelte
+  DEVICE: RMX3491
   # (required) device tree link with branch 
-  DT_LINK: https://github.com/TeamWin/android_device_samsung_j7xelte
+  DT_LINK: https://github.com/cd-Crypton/custom_recovery_tree_realme_RMX3491
   # (required) who made your phone ? 
-  MANUFACTURER: samsung
+  MANUFACTURER: realme 
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
   TARGET: recovery
   # dont change that
   IMAGE: image
   # (required) depend of device tree if you see twrp_"codename".mk use twrp
   # else (omni_"codename".mk): omni
-  OT: omni
+  OT: twrp 
   # dont change that
   SYM: _
 
