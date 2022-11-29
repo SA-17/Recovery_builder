@@ -9,7 +9,7 @@ env:
   # (required) manifest branch 
   BRANCH: twrp-12.1
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: m10lte
+  DEVICE: RMX3491
   # (required) device tree link with branch if exists
   DT_LINK: https://github.com/Darkweber0009/twrp_recovery_tree_realme_RMX3491
   # (required) who made your phone ? 
