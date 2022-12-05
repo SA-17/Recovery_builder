@@ -9,9 +9,9 @@ env:
   # (required) manifest branch 
   BRANCH: v3_10.0
   # (required) device codename i.e: sweet mojito.. 
-  DEVICE: j7xelte
+  DEVICE: j53gxx
   # (required) device tree link with branch 
-  DT_LINK: https://github.com/TeamWin/android_device_samsung_j7xelte
+  DT_LINK: https://github.com/TeamWin/android_device_samsung_j53gxx
   # (required) who made your phone ? 
   MANUFACTURER: samsung
   # (required) recovery partiton = recovery, else (no recovery partition): boot 
