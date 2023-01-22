@@ -58,8 +58,8 @@ jobs:
        - name: Build recovery
          run: |
               cd work
-              . build/envsetup.sh && lunch $OT$SYM$DEVICE-$BTYPE && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j15
-              zip out/target/product/$DEVICE/recovery.zip out/target/product/$DEVICE/recovery.*
+              . build/envsetup.sh && lunch $OT$SYM$DEVICE-$BTYPE && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j30
+              zip out/target/product/$DEVICE/recovery.zip out/target/product/$DEVICE/$TARGET.*
 
        - name: Release recovery
          uses: softprops/action-gh-release@v1
