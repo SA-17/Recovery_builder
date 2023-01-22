@@ -65,7 +65,7 @@ jobs:
          env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
-          tag_name: $BRANCH for $DEVICE
+          tag_name: custom recovery
           name: recovery for $DEVICE
           files: | 
             work/out/target/product/*/recovery.*
