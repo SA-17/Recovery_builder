@@ -8,22 +8,22 @@ env:
 
   # A) choosing right manifest:
   # 1) manifest is required choose the compatible its depend on your current android version.
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
   # 2) manifest branch same thing it depend on your current android
-  BRANCH: twrp-9.0
+  BRANCH: twrp-11
 
   # B) Information about your device:
   # 1) every device tree use main file called twrp_/omni_****.mk use the name between .mk and omni_/twrp_ keyword
-  DEVICE: m10lte
+  DEVICE: Infinix_X698
   # 2) device tree link
-  DT_LINK: https://github.com/youssefnone/android_recovery_samsung_m10lte
+  DT_LINK: https://github.com/Abdullashakee/android_device_infinix_Infinix-X698
   # 3) device manufacturer please you the one which used on device.mk or BoardConfig.mk 
-  MANUFACTURER: samsung
+  MANUFACTURER: infinix
   # 4) target build. depend on what you have on you phone. recovery partition: recovery or recovery in boot partition: boot
   TARGET: recovery
   # 5) build type eng (recommended) , user (dont use it), userdebug (this too)
   BTYPE: eng
-  # 6) the output file is ended with .img or tarball extension (.tar) (again .tar used by samsung mkbootimg.mk to make recovery flashable by odin)
+  # 6) the output file is ended with .img or tarball extension (.tar) (again .tar used by infinix mkbootimg.mk to make recovery flashable by odin)
   FORMAT: img
   # end dont edit anything after this comment
   
