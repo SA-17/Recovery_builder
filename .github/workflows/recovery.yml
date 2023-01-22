@@ -1,5 +1,4 @@
 name: Build recovery(twrp,shrp,pbrp)
-
 on:
   workflow_dispatch:
 
@@ -23,6 +22,8 @@ env:
   TARGET: recovery
   # 5) build type eng (recommended) , user (dont use it), userdebug (this too)
   BTYPE: eng
+  # 6) Twrp type omni or twrp may depend on main file omni_/twrp_****.mk
+  OT: omni
   # end dont edit anything after this comment
   
   # C) these part and what under dont edit it
