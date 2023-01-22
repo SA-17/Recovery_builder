@@ -23,8 +23,6 @@ env:
   TARGET: recovery
   # 5) build type eng (recommended) , user (dont use it), userdebug (this too)
   BTYPE: eng
-  # 6) the output file is ended with .img or tarball extension (.tar) (again .tar used by samsung mkbootimg.mk to make recovery flashable by odin)
-  FORMAT: img
   # end dont edit anything after this comment
   
   # C) these part and what under dont edit it
