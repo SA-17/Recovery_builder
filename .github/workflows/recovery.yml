@@ -68,5 +68,5 @@ jobs:
          with:
           name: recovery for $DEVICE
           files: | 
-            work/out/target/product/$DEVICE/recovery.$FORMAT
+            work/out/target/product/*/recovery.*
 
