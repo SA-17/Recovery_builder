@@ -13,7 +13,7 @@ env:
 
   # B) Information about your device:
   # 1) every device tree use main file called twrp_/omni_****.mk use the name between .mk and omni_/twrp_ keyword
-  DEVICE: Infinix-X698
+  DEVICE: X698
   # 2) device tree link
   DT_LINK: https://github.com/SA-17/android_device_infinix_Infinix-X698
   # 3) device manufacturer please you the one which used on device.mk or BoardConfig.mk 
@@ -70,4 +70,3 @@ jobs:
           name: recovery for $DEVICE
           files: | 
             work/out/target/product/recovery/recovery.zip
-
