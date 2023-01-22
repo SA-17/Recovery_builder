@@ -7,7 +7,7 @@ env:
 
   # A) choosing right manifest:
   # 1) manifest is required choose the compatible its depend on your current android version.
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
   # 2) manifest branch same thing it depend on your current android
   BRANCH: twrp-9.0
 
