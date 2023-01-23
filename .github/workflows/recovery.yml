@@ -21,13 +21,16 @@ env:
   DEVICE: m10lte
   # 2) device tree link
   DT_LINK: https://github.com/youssefnone/android_recovery_samsung_m10lte
-  # 3) device manufacturer please you the one which used on device.mk or BoardConfig.mk 
+  # 3) device tree branch which you want to build
+    # if your repo doesnt have a one branch not renamed use: main
+  DT_BR: twrp
+  # 4) device manufacturer please you the one which used on device.mk or BoardConfig.mk 
   MANUFACTURER: samsung
-  # 4) target build. depend on what you have on you phone. recovery partition: recovery or recovery in boot partition: boot
+  # 5) target build. depend on what you have on you phone. recovery partition: recovery or recovery in boot partition: boot
   TARGET: recovery
-  # 5) build type eng (recommended) , user (dont use it), userdebug (this too)
+  # 6) build type eng (recommended) , user (dont use it), userdebug (this too)
   BTYPE: eng
-  # 6) Twrp type omni or twrp may depend on main file omni_/twrp_****.mk
+  # 7) Twrp type omni or twrp may depend on main file omni_/twrp_****.mk
   OT: omni
   # end dont edit anything after this comment
   
@@ -58,7 +61,7 @@ jobs:
              cd work
              repo init -u $MANIFEST -b $BRANCH --depth=1              
              repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
-             git clone $DT_LINK --depth=1 --single-branch device/$MANUFACTURER/$DEVICE          
+             git clone $DT_LINK -b $DT_BR --depth=1 --single-branch device/$MANUFACTURER/$DEVICE
              
        - name: Build recovery
          run: |
