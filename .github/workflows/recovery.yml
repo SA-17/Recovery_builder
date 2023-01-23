@@ -6,9 +6,14 @@ env:
   # change value from:
 
   # A) choosing right manifest:
-  # 1) manifest is required choose the compatible its depend on your current android version.
+  # 1) recovery type: 
+     # to build twrp, add: twrp
+     # to build shrp, add: shrp
+     # to build pbrp, add: pbrp
+  RTYPE: twrp
+  # 2) manifest is required choose the compatible its depend on your current android version.
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
-  # 2) manifest branch same thing it depend on your current android
+  # 3) manifest branch same thing it depend on your current android
   BRANCH: twrp-9.0
 
   # B) Information about your device:
@@ -40,9 +45,9 @@ jobs:
                                
        - name: remove pkg and setting repo
          run: |
-            sudo apt update && sudo apt install git zip
-            git clone https://github.com/SA-17/rm_pkg pkg && cd pkg && bash setup.sh
-            cd .. && sudo -E apt-get -qq update
+            sudo apt update && sudo apt install git zip wget
+            wget -O https://github.com/SA-17/rm_pkg/raw/main/setup.sh && bash setup.sh
+            sudo -E apt-get -qq update
             sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
             sudo chmod a+rx /usr/local/bin/repo
@@ -59,7 +64,8 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch $OT$SYM$DEVICE-$BTYPE && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j30
-              zip out/target/product/recovery.zip out/target/product/$DEVICE/$TARGET.*
+              wget -O https://github.com/SA-17/rm_pkg/raw/main/zip.sh
+              bash zip.sh
 
        - name: Release recovery
          uses: softprops/action-gh-release@v1
