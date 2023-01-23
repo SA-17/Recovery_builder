@@ -7,23 +7,23 @@ env:
 
   # A) choosing right manifest:
   # 1) manifest is required choose the compatible its depend on your current android version.
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
   # 2) manifest branch same thing it depend on your current android
-  BRANCH: twrp-11
+  BRANCH: twrp-9.0
 
   # B) Information about your device:
   # 1) every device tree use main file called twrp_/omni_****.mk use the name between .mk and omni_/twrp_ keyword
-  DEVICE: X698
+  DEVICE: m10lte
   # 2) device tree link
-  DT_LINK: https://github.com/SA-17/android_device_infinix_Infinix-X698
+  DT_LINK: https://github.com/youssefnone/android_recovery_samsung_m10lte
   # 3) device manufacturer please you the one which used on device.mk or BoardConfig.mk 
-  MANUFACTURER: infinix
+  MANUFACTURER: samsung
   # 4) target build. depend on what you have on you phone. recovery partition: recovery or recovery in boot partition: boot
-  TARGET: boot
+  TARGET: recovery
   # 5) build type eng (recommended) , user (dont use it), userdebug (this too)
   BTYPE: eng
   # 6) Twrp type omni or twrp may depend on main file omni_/twrp_****.mk
-  OT: twrp
+  OT: omni
   # end dont edit anything after this comment
   
   # C) these part and what under dont edit it
