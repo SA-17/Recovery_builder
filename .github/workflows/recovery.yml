@@ -5,7 +5,7 @@ on:
 env:
   # change value from:
 
-  # A) choosing right manifest:
+  # A) choosing right manifest
   # 1) recovery type: 
      # to build twrp, add: twrp
      # to build shrp, add: shrp
