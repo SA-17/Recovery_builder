@@ -23,7 +23,7 @@ env:
   DT_LINK: https://github.com/youssefnone/android_recovery_samsung_m10lte
   # 3) device tree branch which you want to build
     # if your repo doesnt have a one branch not renamed use: main
-  DT_BR: twrp
+  DT_BR: twrp-1.0
   # 4) device manufacturer please you the one which used on device.mk or BoardConfig.mk 
   MANUFACTURER: samsung
   # 5) target build. depend on what you have on you phone. recovery partition: recovery or recovery in boot partition: boot
