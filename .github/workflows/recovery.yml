@@ -15,7 +15,7 @@ env:
   # 1) every device tree use main file called twrp_/omni_****.mk use the name between .mk and omni_/twrp_ keyword
   DEVICE: X698
   # 2) device tree link
-  DT_LINK: https://github.com/Abdullashakee/android_device_infinix_Infinix-X698/blob/A11/twrp_X698.mk
+  DT_LINK: https://github.com/Abdullashakee/android_device_infinix_Infinix-X698
   # 3) device manufacturer please you the one which used on device.mk or BoardConfig.mk 
   MANUFACTURER: infinix
   # 4) target build. depend on what you have on you phone. recovery partition: recovery or recovery in boot partition: boot
