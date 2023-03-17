@@ -10,6 +10,10 @@ jobs:
        - name: Init the System
          uses: actions/checkout@master
 
+       - name: setup variables
+         run: |
+            bash config.sh
+
        - name: remove pkg and setting repo
          run: |
             sudo apt update && sudo apt install zip
@@ -25,14 +29,14 @@ jobs:
              cd work
              repo init -u $MANIFEST -b $BRANCH --depth=1
              repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
-             git clone $DT_LINK -b $DT_BR --depth=1 --single-branch device/$MANUFACTURER/$DEVICE
+             git clone $DT_LINK -b $DT_BR device/$VENDOR/$DEVICE
 
        - name: Build recovery
          run: |
               cd work
-              . build/envsetup.sh && lunch $OT$SYM$DEVICE-$BTYPE && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j30
+              . build/envsetup.sh && lunch $OT$SYM$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j`nproc`
 
-       - name: Make a downlodable file
+       - name: Making file
          run: |
               curl -LO https://github.com/SA-17/rm_pkg/raw/main/zip.sh
               bash zip.sh
