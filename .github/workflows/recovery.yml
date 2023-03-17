@@ -36,6 +36,7 @@ jobs:
 
        - name: Making file
          run: |
+              source config.sh
               curl -LO https://github.com/SA-17/rm_pkg/raw/main/zip.sh
               bash zip.sh
 
@@ -45,5 +46,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
           tag_name: ${{ github.run_id }}
-          name: recovery for ${{ github.event.inputs.DEVICE }}
+          name: recovery image
           files: work/out/target/product/recovery.zip
