@@ -14,5 +14,4 @@ export TARGET="recoveryimage" # build method: recoveryimage, bootimage, vendorbo
 export OT="omni" # recovery type: omni, twrp, something else
 
 # you dont need to edit these
-export BTYPE="eng"
 export SYM="_"
