@@ -2,42 +2,6 @@ name: Build recovery(twrp,shrp,pbrp)
 on:
   workflow_dispatch:
 
-env:
-  # change value from:
-
-  # A) choosing right manifest:
-  # 1) recovery type: 
-     # to build twrp, add: twrp
-     # to build shrp, add: shrp
-     # to build pbrp, add: pbrp
-  RTYPE: twrp
-  # 2) manifest is required choose the compatible its depend on your current android version.
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
-  # 3) manifest branch same thing it depend on your current android
-  BRANCH: twrp-9.0
-
-  # B) Information about your device:
-  # 1) every device tree use main file called twrp_/omni_****.mk use the name between .mk and omni_/twrp_ keyword
-  DEVICE: m10lte
-  # 2) device tree link
-  DT_LINK: https://github.com/youssefnone/android_recovery_samsung_m10lte
-  # 3) device tree branch which you want to build
-    # if your repo doesnt have a one branch not renamed use: main
-  DT_BR: twrp-1.0
-  # 4) device manufacturer please you the one which used on device.mk or BoardConfig.mk 
-  MANUFACTURER: samsung
-  # 5) target build. depend on what you have on you phone. recovery partition: recovery or recovery in boot partition: boot
-  TARGET: recovery
-  # 6) build type eng (recommended) , user (dont use it), userdebug (this too)
-  BTYPE: eng
-  # 7) Twrp type omni or twrp may depend on main file omni_/twrp_****.mk
-  OT: omni
-  # end dont edit anything after this comment
-  
-  # C) these part and what under dont edit it
-  IMAGE: image
-  SYM: _
-
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -45,7 +9,7 @@ jobs:
     steps:
        - name: Init the System
          uses: actions/checkout@master
-                               
+
        - name: remove pkg and setting repo
          run: |
             sudo apt update && sudo apt install zip
@@ -54,19 +18,22 @@ jobs:
             sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
             sudo chmod a+rx /usr/local/bin/repo
-            
+
        - name: Adding and Sync source
-         run: |   
+         run: |
              mkdir work
              cd work
-             repo init -u $MANIFEST -b $BRANCH --depth=1              
+             repo init -u $MANIFEST -b $BRANCH --depth=1
              repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK -b $DT_BR --depth=1 --single-branch device/$MANUFACTURER/$DEVICE
-             
+
        - name: Build recovery
          run: |
               cd work
               . build/envsetup.sh && lunch $OT$SYM$DEVICE-$BTYPE && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET$IMAGE -j30
+
+       - name: Make a downloadable file
+         run: |
               curl -LO https://github.com/SA-17/rm_pkg/raw/main/zip.sh
               bash zip.sh
 
@@ -76,5 +43,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
           tag_name: ${{ github.run_id }}
-          name: recovery for ${{ github.event.inputs.DEVICE_NAME }}
+          name: recovery for ${{ github.event.inputs.DEVICE }}
           files: work/out/target/product/recovery.zip
