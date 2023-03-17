@@ -8,7 +8,7 @@ else
    FILE="*"
 fi
 
-if [[ "$RTYPE" == "twrp" ]]; then
+if [[ "$NAME" == "twrp" ]]; then
     zip recovery.zip out/target/product/$DEVICE/$FILE.img
 else
     zip recovery.zip out/target/product/$DEVICE/*.zip

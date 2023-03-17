@@ -1,7 +1,7 @@
 #!/bin/bash env
 
-# about the recovery
-export RTYPE="twrp" # supported: pbrp, shrp, twrp
+# about the custom recovery
+export NAME="twrp" # supported: pbrp, shrp, twrp
 export MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git" # the link of manifest
 export BRANCH="twrp-9.0" # the branch of manifest
 
