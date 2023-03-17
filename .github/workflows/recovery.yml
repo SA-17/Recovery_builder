@@ -26,13 +26,13 @@ jobs:
              cd work
              repo init -u $MANIFEST -b $BRANCH --depth=1
              repo sync -c -j`nproc` --force-sync --no-clone-bundle --no-tags
-             git clone $DT_LINK -b $DT_BR device/$VENDOR/$DEVICE
+             git clone $DT_LINK -b $DT_BRANCH device/$VENDOR/$DEVICE
 
        - name: Build recovery
          run: |
               source config.sh
               cd work
-              . build/envsetup.sh && lunch $OT$SYM$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j`nproc`
+              . build/envsetup.sh && lunch $TYPE$SYM$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j`nproc`
 
        - name: Making file
          run: |
