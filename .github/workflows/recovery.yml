@@ -12,8 +12,8 @@ jobs:
 
        - name: remove pkg and setting repo
          run: |
-            sudo apt update && sudo apt install zip
-            curl -LO https://github.com/SA-17/rm_pkg/raw/main/setup.sh && bash setup.sh
+            sudo apt update && sudo apt install wget zip
+            wget -qO -  | bash
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
@@ -25,7 +25,7 @@ jobs:
              mkdir work
              cd work
              repo init -u $MANIFEST -b $BRANCH --depth=1
-             repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
+             repo sync -c -j`nproc` --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK -b $DT_BR device/$VENDOR/$DEVICE
 
        - name: Build recovery
@@ -37,8 +37,7 @@ jobs:
        - name: Making file
          run: |
               source config.sh
-              curl -LO https://github.com/SA-17/rm_pkg/raw/main/zip.sh
-              bash zip.sh
+              wget -qO -  | bash
 
        - name: Release recovery
          uses: softprops/action-gh-release@v1
