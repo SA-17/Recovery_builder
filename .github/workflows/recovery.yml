@@ -10,10 +10,6 @@ jobs:
        - name: Init the System
          uses: actions/checkout@master
 
-       - name: setup variables
-         run: |
-            source config.sh
-
        - name: remove pkg and setting repo
          run: |
             sudo apt update && sudo apt install zip
@@ -25,6 +21,7 @@ jobs:
 
        - name: Adding and Sync source
          run: |
+             source config.sh
              mkdir work
              cd work
              repo init -u $MANIFEST -b $BRANCH --depth=1
@@ -33,6 +30,7 @@ jobs:
 
        - name: Build recovery
          run: |
+              source config.sh
               cd work
               . build/envsetup.sh && lunch $OT$SYM$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j`nproc`
 
