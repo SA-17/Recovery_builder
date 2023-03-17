@@ -10,7 +10,7 @@ export DEVICE="m10lte" # codename used in device tree
 export DT_LINK="https://github.com/youssefnone/android_recovery_samsung_m10lte" # device tree link
 export DT_BR="twrp" # device tree branch
 export VENDOR="samsung" # device manufacturer or vendor
-export TARGET="recovery" # build method: recoveryimage, bootimage, vendorboot
+export TARGET="recoveryimage" # build method: recoveryimage, bootimage, vendorboot
 export OT="omni" # recovery type: omni, twrp, something else
 
 # you dont need to edit these
