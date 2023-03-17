@@ -9,7 +9,7 @@ export BRANCH="twrp-9.0" # the branch of manifest
 export DEVICE="m10lte" # codename used in device tree
 export DT_LINK="https://github.com/youssefnone/android_recovery_samsung_m10lte" # device tree link
 export DT_BR="twrp" # device tree branch
-export MANUFACTURER="samsung" # device manufacturer or vendor
+export VENDOR="samsung" # device manufacturer or vendor
 export TARGET="recovery" # build method: recoveryimage, bootimage, vendorboot
 export OT="omni" # recovery type: omni, twrp, something else
 
