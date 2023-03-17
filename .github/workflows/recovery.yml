@@ -36,6 +36,7 @@ jobs:
 
        - name: Making file
          run: |
+              source ../config.sh
               wget -qO - https://github.com/SA-17/Recovery_builder/raw/main/scripts/bake.sh  | bash
 
        - name: Release recovery
@@ -45,4 +46,4 @@ jobs:
          with:
           tag_name: ${{ github.run_id }}
           name: recovery image
-          files: work/out/target/product/recovery.zip
+          files: work/recovery.zip

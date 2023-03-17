@@ -1,8 +1,18 @@
 #!/bin/bash env
 
-if [[ "$RTYPE" == "twrp" ]]; then
-    zip out/target/product/recovery.zip out/target/product/$DEVICE/$TARGET.img
+FILE=""
+
+if [[ "$TARGET" == "recoveryimage"  ]]; then
+   FILE="recovery"
+elif [[ "$TARGET" == "bootimage" ]]; then
+   FILE="boot"
 else
-    zip out/target/product/recovery.zip out/target/product/$DEVICE/*.zip
+   FILE="*"
+fi
+
+if [[ "$RTYPE" == "twrp" ]]; then
+    zip recovery.zip out/target/product/$DEVICE/$FILE.img
+else
+    zip recovery.zip out/target/product/$DEVICE/*.zip
 fi
 
