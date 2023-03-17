@@ -12,7 +12,7 @@ jobs:
 
        - name: setup variables
          run: |
-            bash config.sh
+            source config.sh
 
        - name: remove pkg and setting repo
          run: |
