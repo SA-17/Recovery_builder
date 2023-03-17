@@ -1,7 +1,5 @@
 #!/bin/bash env
 
-FILE=""
-
 if [[ "$TARGET" == "recoveryimage"  ]]; then
    FILE="recovery"
 elif [[ "$TARGET" == "bootimage" ]]; then

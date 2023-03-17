@@ -36,7 +36,8 @@ jobs:
 
        - name: Making file
          run: |
-              source ../config.sh
+              source config.sh
+              cd work
               wget -qO - https://github.com/SA-17/Recovery_builder/raw/main/scripts/bake.sh  | bash
 
        - name: Release recovery
