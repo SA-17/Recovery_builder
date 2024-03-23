@@ -15,7 +15,7 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
-  DEVICE: m10lte
+  DEVICE: m10l
   DT_LINK: https://github.com/Hostfl/android_device_samsung_m10lte -b android_11
   DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
